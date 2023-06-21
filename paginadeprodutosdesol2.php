@@ -1,3 +1,12 @@
+<?php
+include ("conecta.php");
+
+
+$foto = ["imagem"];
+
+$nomefoto = "armacao3";
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -35,7 +44,7 @@
                     <span class="off">$115,00</span>
                     </div>
                     <div class="options">
-                        <a href="" class="button" onclick="alertCarrinho()"><img src="images/icone carrinho.svg"> Adicione ao carrinho</a>
+                    <button onclick="comprar()" type="submit" name="comprar" class=button>Adicionar ao Carrinho</button>
                         <div class="con-like">
                             <input title="like" type="checkbox" class="like">
                             <div class="checkmark">
@@ -64,4 +73,10 @@
     </main>
 </body>
 <script src="alertCarrinho.js" ></script>
+<script>
+function comprar()
+{
+  window.open("carrinho.php?nome=" +document.getElementById("nome").innerHTML+"&preco="+document.getElementById("preco").innerHTML+"&imagem="+"images/armacao3.jpg", "_self");
+}
+</script>
 </html>
